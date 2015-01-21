@@ -1,5 +1,8 @@
 # NTP Role
 
+[![Build
+Status](https://travis-ci.org/dbryant4/ansible-role-ntp.svg?branch=master)](https://travis-ci.org/dbryant4/ansible-role-ntp)
+
 ## Description
 
 This role manages the installation of NTP on a Raspberry Pi, although it
