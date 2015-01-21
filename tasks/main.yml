@@ -1,0 +1,10 @@
+---
+- name: install common packages
+  apt: pkg={{ item }} state=present
+  with_items:
+    - ntp
+
+- name: write the ntp.conf
+  template: src=ntp.conf.j2 dest=/etc/ntp.conf
+  notify:
+    - restart ntp
