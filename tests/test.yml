@@ -1,0 +1,7 @@
+---
+- hosts: ntp-clients
+  gather_facts: yes
+  roles:
+    - ansible-role-ntp
+  tasks:
+    - wait_for: path=/var/run/ntpd.pid delay=10

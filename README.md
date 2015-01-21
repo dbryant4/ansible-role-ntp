@@ -44,7 +44,5 @@ Include this role in your plays and set varaibles as desired.
     - ntp
 ```
 
-## Directory Structure
-
 ## Tests
-TODO
+This role includes Travis CI tests.
