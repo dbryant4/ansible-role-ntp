@@ -11,9 +11,6 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  # Uninstall other versions of ansible
-  - 'pip uninstall ansible'
-
   # Install a specific version of Ansible.
   - 'pip install ansible==$ANSIBLE_VERSION'
 
