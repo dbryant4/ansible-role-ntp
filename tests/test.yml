@@ -1,7 +1,19 @@
 ---
-- hosts: ntp-clients
+- hosts: all
   gather_facts: yes
   roles:
     - ansible-role-ntp
   tasks:
     - wait_for: path=/var/run/ntpd.pid delay=10
+
+  post_tasks:
+    - command: "service ntp status"
+      register: service_status
+
+    - command: "ntpq -p"
+      register: ntpq
+
+    - assert:
+        that:
+          - "service_status.rc == 0"
+          - "ntpq.rc == 0"
