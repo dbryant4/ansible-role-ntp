@@ -9,9 +9,11 @@
   post_tasks:
     - command: "service ntp status"
       register: service_status
+      changed_when: false
 
     - command: "ntpq -p"
       register: ntpq
+      changed_when: false
 
     - assert:
         that:
